@@ -49,7 +49,7 @@ document.getElementById('generateBtn').addEventListener('click', generateChannel
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
-        alert(`Копійовано: ${text}`);
+        
     }).catch(err => {
         console.error('Помилка копіювання: ', err);
     });
@@ -68,7 +68,7 @@ function generateChannelNames() {
         copyButton.textContent = 'Копіювати';
         copyButton.style.float = 'right';
         copyButton.style.fontSize = '0.8em';
-        copyButton.addEventListener('click', () => copyToClipboard(nameElement.textContent));
+        copyButton.addEventListener('click', () => copyToClipboard(name.charAt(0).toUpperCase() + name.slice(1)));
 
         nameElement.appendChild(copyButton);
         namesContainer.appendChild(nameElement);
